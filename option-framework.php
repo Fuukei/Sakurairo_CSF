@@ -7,7 +7,7 @@
  * @copyright 2015-2021 Codestar
  *
  *
- * Plugin Name: Codestar Framework
+ * Plugin Name: Codestar Framework Modified by Fuukei
  * Plugin URI: http://codestarframework.com/
  * Author: Codestar
  * Author URI: http://codestarthemes.com/
@@ -18,3 +18,4 @@
  *
  */
 require_once plugin_dir_path( __FILE__ ) .'classes/setup.class.php';
+require_once plugin_dir_path(__FILE__) .'options/theme-options.php';
