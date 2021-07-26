@@ -1022,7 +1022,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'live2d_options',
         'type' => 'switcher',
         'title' => __('Live2D Model','csf'),
-        'label' => __('Live2D Model will be loaded in the bottom left corner of the page After turning on','csf'),
+        'label' => __('Live2D Model will be loaded in the bottom left corner of the page after turning on','csf'),
         'default' => false
       ),
 
@@ -1375,7 +1375,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'wave_effects',
         'type' => 'switcher',
         'title' => __('cover wave effects','csf'),
-        'label' => __('Wave effect will appear at the bottom of the cover of the home page After turning on, will be forced off in dark mode','csf'),
+        'label' => __('Wave effect will appear at the bottom of the cover of the home page after turning on, will be forced off in dark mode','csf'),
         'default' => false
       ),
 
@@ -2645,7 +2645,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'login_urlskip',
         'type' => 'switcher',
         'title' => __('Jump after login','csf'),
-        'label' => __('Jump to backend for admins and home for users After turning on','csf'),
+        'label' => __('Jump to backend for admins and home for users after turning on','csf'),
         'default' => false
       ),
 
@@ -2798,7 +2798,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'fancybox',
         'type' => 'switcher',
         'title' => __('FancyBox lightbox effect','csf'),
-        'label' => __('FancyBox will be used as an image lightbox effect After turning on, additional JQ libraries will be loaded','csf'),
+        'label' => __('FancyBox will be used as an image lightbox effect after turning on, additional JQ libraries will be loaded','csf'),
         'dependency' => array( 'baguetteBox', '==', 'false' ),
         'default' => false
       ), 
