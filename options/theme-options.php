@@ -32,7 +32,7 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'personal_avatar',
         'type'  => 'upload',
         'title' => __('Personal Avatar','csf'),
-        'desc'   => __('The best ratio is 1:1','csf'),
+        'desc'   => __('The best length-width ratio of is 1:1','csf'),
         'library'      => 'image',
       ),
 
@@ -40,7 +40,7 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'text_logo_options',
         'type'  => 'switcher',
         'title' => __('Mashiro Special Effects Text','csf'),
-        'label'   => __('After opening, the personal avatar will be replaced as the home page display content','csf'),
+        'label'   => __('After turned on, the personal avatar will be replaced by the text as the home page display content','csf'),
         'default' => false
       ),
 
@@ -54,7 +54,7 @@ if( class_exists( 'CSF' ) ) {
             'id'     => 'text',
             'type'   => 'text',
             'title'  => __('Text','csf'),
-            'desc'   => __('It is recommended that the text content should not be too long, and the recommended length is 16 bytes.','csf'),
+            'desc'   => __('The text content should not be too long, and the recommended length is 16 bytes.','csf'),
           ),
           array(
             'id'     => 'font',
@@ -66,7 +66,7 @@ if( class_exists( 'CSF' ) ) {
             'id'     => 'size',
             'type'   => 'slider',
             'title'  => __('Size','csf'),
-            'desc'   => __('Sliding slider, the recommended value range is 70-90','csf'),
+            'desc'   => __('Slide to adjust, the recommended value range is 70-90','csf'),
             'unit'    => 'px',
             'min'   => '40',
             'max'   => '140',
@@ -75,7 +75,7 @@ if( class_exists( 'CSF' ) ) {
             'id'      => 'color',
             'type'    => 'color',
             'title'   => __('Color','csf'),
-            'desc'    => __('Custom colors, light colors are recommended','csf'),
+            'desc'    => __('Customize the colors, light colors are recommended','csf'),
           ),      
         ),
         'default'        => array(
@@ -89,7 +89,7 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'iro_logo',
         'type'  => 'upload',
         'title' => __('Navigation Menu Logo','csf'),
-        'desc'   => __('The best size is 40px, and the navigation menu text logo will not be displayed after filling in','csf'),
+        'desc'   => __('The best size is 40px, and the nav menu text logo will not be displayed after filling in','csf'),
         'library'      => 'image',
       ),
 
@@ -105,7 +105,7 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'iro_meta',
         'type'  => 'switcher',
         'title' => __('Custom Site Keywords and Descriptions','csf'),
-        'label'   => __('After opening, you can customize the site keywords and descriptions','csf'),
+        'label'   => __('After turning on, you can customize the site keywords and descriptions','csf'),
         'default' => false
       ),
 
@@ -114,7 +114,7 @@ if( class_exists( 'CSF' ) ) {
         'type'   => 'text',
         'title'  => __('Site Keywords','csf'),
         'dependency' => array( 'iro_meta', '==', 'true' ),
-        'desc'   => __('The keywords are separated with half width comma "," and the number is best within 5','csf'),
+        'desc'   => __('The keywords should be separated with half width comma "," and it\'s better to set within 5 keywords','csf'),
       ),
 
       array(
@@ -136,7 +136,7 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title'  => __('Appearance Options','csf'),
+    'title'  => __('Appearance','csf'),
     'icon'      => 'fa fa-tree',
     'fields' => array(
 
@@ -149,15 +149,15 @@ if( class_exists( 'CSF' ) ) {
         'id'      => 'theme_skin',
         'type'    => 'color',
         'title'   => __('Theme Color','csf'),
-        'desc'    => __('Custom colors','csf'),
+        'desc'    => __('Customize the colors','csf'),
         'default' => '#505050'
       ),  
 
       array(
         'id'      => 'theme_skin_matching',
         'type'    => 'color',
-        'title'   => __('Theme Matching Color','csf'),
-        'desc'    => __('Custom colors','csf'),
+        'title'   => __('Matching Color','csf'),
+        'desc'    => __('Customize the colors','csf'),
         'default' => '#ffe066'
       ),  
 
@@ -170,22 +170,22 @@ if( class_exists( 'CSF' ) ) {
         'id'      => 'theme_skin_dark',
         'type'    => 'color',
         'title'   => __('Dark Mode Theme Color','csf'),
-        'desc'    => __('Custom colors','csf'),
+        'desc'    => __('Customize the colors','csf'),
         'default' => '#ffcc00'
       ),  
       array(
         'id'    => 'theme_darkmode_auto',
         'type'  => 'switcher',
-        'title' => __('Automatic Switch of Dark Mode','csf'),
+        'title' => __('Automatically Switch to Dark Mode','csf'),
         'label'   => __('Default on','csf'),
         'default' => true
       ),
       array(
         'type'    => 'content',
         'content' => __(
-         '<p><strong>Client local time:</strong>Dark mode will switch automatically from 22:00 to 7:00</p>'
+         '<p><strong>Client local time:</strong>Dark mode will switch on automatically from 22:00 to 7:00</p>'
         .'<p><strong>Follow client settings:</strong>Follow client browser settings</p>'
-        .'<p><strong>Always on:</strong>Always on, unless otherwise configured by the client</p>','csf'),
+        .'<p><strong>Always on:</strong>Always on, except being configured by the client</p>','csf'),
         'dependency' => array( 'theme_darkmode_auto', '==', 'true' ),
 
       ),
@@ -206,7 +206,7 @@ if( class_exists( 'CSF' ) ) {
         'id'     => 'theme_darkmode_img_bright',
         'type'   => 'slider',
         'title'  => __('Dark Mode Image Brightness','csf'),
-        'desc'   => __('Sliding slider, the recommended sliding value range is 0.6-0.8','csf'),
+        'desc'   => __('Slide to adjust, the recommended value range is 0.6-0.8','csf'),
         'step'   => '0.01',
         'min'   => '0.4',
         'max'   => '1',
@@ -216,8 +216,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'theme_darkmode_widget_transparency',
         'type'   => 'slider',
-        'title'  => __('Dark mode Component Transparency','csf'),
-        'desc'   => __('Sliding slider, the recommended sliding value range is 0.6-0.8','csf'),
+        'title'  => __('Dark Mode Component Transparency','csf'),
+        'desc'   => __('Slide to adjust, the recommended sliding value range is 0.6-0.8','csf'),
         'step'   => '0.01',
         'min'   => '0.2',
         'max'   => '1',
@@ -227,7 +227,7 @@ if( class_exists( 'CSF' ) ) {
         'id'     => 'theme_darkmode_background_transparency',
         'type'   => 'slider',
         'title'  => __('Dark mode Background Transparency','csf'),
-        'desc'   => __('Sliding slider, the recommended sliding value range is 0.6-0.8.In order to ensure the best appearance, it is better to keep the display of foreground background image','csf'),
+        'desc'   => __('Slide to adjust, the recommended sliding value range is 0.6-0.8. In order to ensure the best appearance, it is better to keep the display of the frontend background image','csf'),
         'step'   => '0.01',
         'min'   => '0.2',
         'max'   => '1',
@@ -243,15 +243,15 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'theme_commemorate_mode',
         'type'  => 'switcher',
         'title' => __('Commemorate Mode','csf'),
-        'label'   => __('After opening, black and white filters will be added to the global theme','csf'),
+        'label'   => __('After turning on, a black and white filter will be added to the global theme','csf'),
         'default' => false
       ),
 
       array(
         'id'     => 'load_out_svg',
         'type'   => 'text',
-        'title'  => __('Load Control Unit Space Occupying SVG','csf'),
-        'desc'   => __('Fill in the address, which is the SVG displayed when loading the control unit','csf'),
+        'title'  => __('Occupying SVG while Loading Control Units','csf'),
+        'desc'   => __('Fill in the address, which is the SVG displayed when loading control units','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/load_svg/outload.svg'
       ),
 
@@ -260,20 +260,20 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title'  => __('Fonts Options','csf'),
+    'title'  => __('Font Options','csf'),
     'icon'      => 'fa fa-font',
     'fields' => array(
 
       array(
         'type'    => 'subheading',
-        'content' => __('Globally','csf'),
+        'content' => __('Global','csf'),
       ),
 
       array(
         'id'     => 'global_font_weight',
         'type'   => 'slider',
-        'title'  => __('Non Emphasis Text Word Weight','csf'),
-        'desc'   => __('Sliding slider, recommended value range is 300-500','csf'),
+        'title'  => __('Non-Emphasis Text Weight','csf'),
+        'desc'   => __('Slide to adjust, recommended value range is 300-500','csf'),
         'step'   => '10',
         'min'   => '100',
         'max'   => '700',
@@ -284,7 +284,7 @@ if( class_exists( 'CSF' ) ) {
         'id'     => 'global_font_size',
         'type'   => 'slider',
         'title'  => __('Text Font Size','csf'),
-        'desc'   => __('Sliding slider, recommended value range is 15-18','csf'),
+        'desc'   => __('Slide to adjust, recommended value range is 15-18','csf'),
         'step'   => '1',
         'unit'    => 'px',
         'min'   => '10',
@@ -294,14 +294,14 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type'    => 'subheading',
-        'content' => __('External Font','csf'),
+        'content' => __('External Fonts','csf'),
       ),
 
       array(
         'id'    => 'reference_exter_font',
         'type'  => 'switcher',
-        'title' => __('Reference External Font','csf'),
-        'label'   => __('After Opening, you can use external fonts as the default font or other component fonts, but it may affect performance','csf'),
+        'title' => __('Reference External Fonts','csf'),
+        'label'   => __('After turning on, you can use external fonts as the default font or other component fonts, but it may affect performance','csf'),
         'default' => false
       ),
 
@@ -330,7 +330,7 @@ if( class_exists( 'CSF' ) ) {
         'id'     => 'google_fonts_add',
         'type'   => 'text',
         'title'  => __('Google Fonts Name','csf'),
-        'desc'   => __('Please make sure that the added font can be referenced in Google font library and fill in the font name. The added font must be preceded by "|". If multiple fonts are referenced, use "|" as the separator. If the font name has spaces, use a plus sign instead. For example: | zcool + xiaowei| Ma + Shan + Zheng','csf'),
+        'desc'   => __('Please make sure that the added fonts can be referenced in Google Fonts library. Fill in the font names. The added fonts must be preceded by "|". If multiple fonts are referenced, use "|" as the separator. If the font name has spaces, use a plus sign instead. For example: | zcool + xiaowei| Ma + Shan + Zheng','csf'),
       ),
 
     )
@@ -345,7 +345,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'         => 'nav_menu_style',
         'type'       => 'image_select',
-        'title'      => __('Navigation Menu Style','csf'),
+        'title'      => __('Nav Menu Style','csf'),
         'options'    => array(
           'sakurairo' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/nav_menu_style_iro.png',
           'sakura' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/nav_menu_style_sakura.png',
@@ -356,9 +356,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_radius',
         'type'  => 'slider',
-        'title' => __('Navigation Menu Radius','csf'),
+        'title' => __('Nav Menu Radius','csf'),
         'dependency' => array( 'nav_menu_style', '==', 'sakurairo' ),
-        'desc'   => __('Sliding slider, the recommended value is 15','csf'),
+        'desc'   => __('Slide to adjust, the recommended value is 15','csf'),
         'unit'    => 'px',
         'max'   => '50',
         'default' => '15'
@@ -367,9 +367,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'nav_menu_shrink_animation',
         'type'   => 'slider',
-        'title'  => __('Navigation Menu Shrinkage Ratio','csf'),
+        'title'  => __('Nav Menu Shrinkage Ratio','csf'),
         'dependency' => array( 'nav_menu_style', '==', 'sakurairo' ),
-        'desc'   => __('Sliding slider to set the appropriate ratio according to the content length of the navigation menu. When the ratio is set to 95, shrinkage will be turned off. Shrinkage is turned off by default','csf'),
+        'desc'   => __('Slide to set the appropriate ratio according to the content length of the nav menu. When the ratio is set to 95,there will be no shrinkage. This function is off by default','csf'),
         'step'   => '0.5',
         'unit'    => '%',
         'max'   => '95',
@@ -380,8 +380,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'         => 'nav_menu_display',
         'type'       => 'radio',
-        'title'      => __('Navigation Menu Content Display','csf'),
-        'desc'    => __('You can choose to expand or shrink the navigation menu','csf'),
+        'title'      => __('Nav Menu Content Display Method','csf'),
+        'desc'    => __('You can choose to unfold or fold the nav menu contents','csf'),
         'options'    => array(
           'unfold' => __('Unfold','csf'),
           'fold' => __('Fold','csf'),
@@ -392,17 +392,17 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_animation',
         'type'  => 'switcher',
-        'title' => __('Navigation Menu Animation','csf'),
-        'label'   => __('It is on by default. If it is off, the navigation content will be displayed directly','csf'),
+        'title' => __('Nav Menu Animation Effects','csf'),
+        'label'   => __('It is on by default. If it is off, the nav menu content will be displayed directly without effects','csf'),
         'default' => true
       ),
 
       array(
         'id'     => 'nav_menu_animation_time',
         'type'   => 'slider',
-        'title'  => __('Navigation Menu Animation Time','csf'),
+        'title'  => __('Nav Menu Animation Time','csf'),
         'dependency' => array( 'nav_menu_animation', '==', 'true' ),
-        'desc'   => __('Sliding slider,the recommended value range is 1-2','csf'),
+        'desc'   => __('Slide to adjust, the recommended value range is 1-2','csf'),
         'step'   => '0.01',
         'unit'    => 's',
         'max'   => '5',
@@ -412,7 +412,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'         => 'nav_menu_icon_size',
         'type'       => 'radio',
-        'title'      => __('Navigation Menu Icon Size','csf'),
+        'title'      => __('Nav Menu Icon Size','csf'),
         'options'    => array(
           'standard' => __('Standard','csf'),
           'large' => __('Large','csf'),
@@ -423,15 +423,15 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_search',
         'type'  => 'switcher',
-        'title' => __('Navigation Menu Search','csf'),
+        'title' => __('Nav Menu Search','csf'),
         'label'   => __('It is on by default. Click to enter the search area','csf'),
         'default' => true
       ),
       array(
         'id'    => 'nav_menu_blur',
         'type'  => 'slider',
-        'title' => __('Navigation Menu Blur','csf'),
-        'desc'   => __('Sliding slider, the recommended value is 5px, and close when it is 0px','csf'),
+        'title' => __('Nav Menu Blur','csf'),
+        'desc'   => __('Slide to adjust, the recommended value is 5px, and close when it is 0px','csf'),
         'unit'    => 'px',
         'max'   => '20',
         'default' => '0'
@@ -440,7 +440,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'search_area_background',
         'type'  => 'upload',
-        'title' => __('Navigation Menu Search Area Background Image','csf'),
+        'title' => __('Nav Menu Search Area Background Image','csf'),
         'desc'   => __('Set the background image of your search area. Leave this option blank to display a white background','csf'),
         'library'      => 'image',
         'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/iloli.gif'
@@ -449,17 +449,17 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_user_avatar',
         'type'  => 'switcher',
-        'title' => __('Navigation Menu User Avatar','csf'),
-        'label'   => __('Open by default, click to enter the login interface','csf'),
+        'title' => __('Nav Menu User Avatar','csf'),
+        'label'   => __('It is on by default. Click to enter the login interface','csf'),
         'default' => true
       ),
 
       array(
         'id'     => 'unlisted_avatar',
         'type'  => 'upload',
-        'title' => __('Navigation Menu Unlisted User Avatar','csf'),
+        'title' => __('Nav Menu Unlisted User Avatar','csf'),
         'dependency' => array( 'nav_menu_user_avatar', '==', 'true' ),
-        'desc'   => __('The best ratio is 1:1','csf'),
+        'desc'   => __('The best length-width ratio of is 1:1','csf'),
         'library'      => 'image',
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/topavatar.png'
       ),
@@ -467,8 +467,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_secondary_arrow',
         'type'  => 'switcher',
-        'title' => __('Navigation Menu Secondary Menu Prompt Arrow','csf'),
-        'label'   => __('After opening, the menu prompt arrow will appear in the secondary menu of the navigation menu','csf'),
+        'title' => __('Nav Menu Secondary Menu Prompt Arrow','csf'),
+        'label'   => __('After turning on, the menu prompt arrow will appear in the secondary menu of the navigation menu','csf'),
         'dependency' => array( 'nav_menu_style', '==', 'sakura' ),
         'default' => false
       ),
@@ -476,9 +476,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_secondary_radius',
         'type'  => 'slider',
-        'title' => __('Navigation Menu Secondary Menu Radius','csf'),
+        'title' => __('Nav Menu Secondary Menu Radius','csf'),
         'dependency' => array( 'nav_menu_style', '==', 'sakurairo' ),
-        'desc'   => __('Sliding slider, the recommended value is 15','csf'),
+        'desc'   => __('Slide to adjust, the recommended value is 15','csf'),
         'unit'    => 'px',
         'max'   => '30',
         'default' => '15'
@@ -487,23 +487,23 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'logo_text',
         'type'   => 'text',
-        'title'  => __('Navigation Menu Logo Text','csf'),
-        'desc'   => __('Fill in the text. If the Mashiro logo is turned on, this option is invalid','csf'),
+        'title'  => __('Nav Menu Logo Text','csf'),
+        'desc'   => __('Fill in the text. If the Mashiro logo is turned on, this option will be invalid','csf'),
         'dependency' => array( 'mashiro_logo_option', '==', 'false' ),
       ),
 
       array(
         'id'    => 'mashiro_logo_option',
         'type'  => 'switcher',
-        'title' => __('Navigation Menu Mashiro Logo','csf'),
-        'label'   => __('After opening, the Mashiro Logo will appear and replace the navigation menu logo position','csf'),
+        'title' => __('Nav Menu Mashiro Logo','csf'),
+        'label'   => __('After turning on, the Mashiro Logo will appear and replace the navigation menu logo position','csf'),
         'default' => false
       ),
 
       array(
         'id'     => 'mashiro_logo',
         'type'   => 'fieldset',
-        'title'  => __('Navigation Menu Mashiro Logo Option','csf'),
+        'title'  => __('Nav Menu Mashiro Logo Option','csf'),
         'dependency' => array( 'mashiro_logo_option', '==', 'true' ),
         'fields' => array(
           array(
@@ -552,7 +552,7 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title' => __('Style Menu and Foreground Background Related Options','csf'),
+    'title' => __('Style Menu and Frontend Background Related Options','csf'),
     'icon' => 'fa fa-th-large',
     'fields' => array(
 
@@ -565,7 +565,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'style_menu_display',
         'type' => 'image_select',
         'title' => __('Style Menu Display','csf'),
-        'desc' => __('You can choose to display the style menu in full or simply, the full display will show the font toggle function and text hints','csf'),
+        'desc' => __('You can choose to display the style menu simply or in full. The full display will show the font toggle function and text hints','csf'),
         'options' => array(
           'full' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/style_menu_full.png',
           'mini' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/style_menu_mini.png',
@@ -576,8 +576,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'style_menu_radius',
         'type' => 'slider',
-        'title' => __('Style Menu Button Rounded Corners','csf'),
-        'desc' => __('Sliding slider, the recommended value is 10','csf'),
+        'title' => __('Style Menu Button Radius','csf'),
+        'desc' => __('Slide to adjust, the recommended value is 10','csf'),
         'unit' => 'px',
         'max' => '50',
         'default' => '10'
@@ -587,15 +587,15 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'style_menu_background_color',
         'type' => 'color',
         'title' => __('Style Menu Background Color','csf'),
-        'desc' => __('Custom color, lighter colors are recommended','csf'),
+        'desc' => __('Customize the colors, lighter colors are recommended','csf'),
         'default' => 'rgba(255,255,255,0.8)'
       ),   
 
       array(
         'id' => 'style_menu_selection_color',
         'type' => 'color',
-        'title' => __('Style Menu Options Background Color','csf'),
-        'desc' => __('Custom color, it is recommended to use a color that is the same color as the theme color and is a lighter color','csf'),
+        'title' => __('Style Menu Option Background Color','csf'),
+        'desc' => __('Customize the colors, it is recommended to use a light color that corresponds with the theme color','csf'),
         'default' => '#e8e8e8'
       ),
 
@@ -603,7 +603,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'style_menu_selection_radius',
         'type' => 'slider',
         'title' => __('Style Menu Options Interface Rounded Corners','csf'),
-        'desc' => __('Sliding slider, the recommended value is 15','csf'),
+        'desc' => __('Slide to adjust, the recommended value is 15','csf'),
         'unit' => 'px',
         'max' => '30',
         'default' => '15'
@@ -611,7 +611,7 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type' => 'subheading',
-        'content' => __('Foreground Background','csf'),
+        'content' => __('Frontend Background','csf'),
       ),
 
       array(
@@ -622,8 +622,8 @@ if( class_exists( 'CSF' ) ) {
           'contain' => __('Contain','csf'),
           'auto' => __('Auto','csf'),
         ),
-        'title' => __('Foreground Background Scaling Method','csf'), 
-        'desc' => __('You can choose two ways to scale the foreground background, the default is auto-scaling','csf'),
+        'title' => __('Frontend Background Scaling Method','csf'), 
+        'desc' => __('You can choose two ways to scale the frontend background, the default is auto-scaling','csf'),
         'default' => 'auto'
       ),
 
@@ -723,8 +723,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'reception_background_transparency',
         'type' => 'slider',
-        'title' => __('Background Transparency in Foreground','csf'),
-        'desc' => __('Sliding slider, the recommended sliding value range is 0.6-0.8','csf'),
+        'title' => __('Background Transparency in the Frontend','csf'),
+        'desc' => __('Slide to adjust, the recommended sliding value range is 0.6-0.8','csf'),
         'step' => '0.01',
         'min' => '0.2',
         'max' => '1',
@@ -733,7 +733,7 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type' => 'subheading',
-        'content' => __('Fonts Area','csf'),
+        'content' => __('Font Area','csf'),
       ),
 
       array(
@@ -764,12 +764,12 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'aplayer_server',
         'type' => 'select',
         'title' => __('Footer Online Music Player','csf'),
-        'desc' => __('A button will appear at the bottom left corner of the footer after opening, click it and the footer online player will be displayed','csf'),
+        'desc' => __('A button will appear at the bottom left corner of the footer after turning on, click it and the footer online player will be displayed','csf'),
         'options' => array(
           'off' => __('Off','csf'),
           'netease' => __('Netease Cloud Music','csf'),
           'kugou' => __('Kugou Music(may not be available)','csf'),
-          'baidu' => __('Baidu Music(overseas servers are not available)','csf'),
+          'baidu' => __('Baidu Music(not available on servers overseas)','csf'),
           'tencent' => __('QQ Music(may not be available)','csf'),
         ),
         'default' => 'off'
@@ -816,7 +816,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'slider',
         'title' => __('Default Volume for Footer Online Music Player','csf'),
         'dependency' => array( 'aplayer_server', '! =', 'off' ),
-        'desc' => __('Sliding slider, the recommended sliding value range is 0.4-0.6','csf'),
+        'desc' => __('Slide to adjust, the recommended sliding value range is 0.4-0.6','csf'),
         'step' => '0.01',
         'max' => '1',
         'default' => '0.5'
@@ -978,7 +978,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'color',
         'title' => __('Preload Animation Color A','csf'),
         'dependency' => array( 'preload_animation', '==', 'true' ),
-        'desc' => __('Custom colors','csf'),
+        'desc' => __('Customize the colors','csf'),
         'default' => '#ffea99'
       ),   
 
@@ -987,7 +987,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'color',
         'title' => __('Preload Animation Color B','csf'),
         'dependency' => array( 'preload_animation', '==', 'true' ),
-        'desc' => __('Custom colors','csf'),
+        'desc' => __('Customize the colors','csf'),
         'default' => '#ffcc00'
       ),   
 
@@ -1022,7 +1022,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'live2d_options',
         'type' => 'switcher',
         'title' => __('Live2D Model','csf'),
-        'label' => __('Live2D Model will be loaded in the bottom left corner of the page after opening','csf'),
+        'label' => __('Live2D Model will be loaded in the bottom left corner of the page After turning on','csf'),
         'default' => false
       ),
 
@@ -1222,7 +1222,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'infor_bar_bgcolor',
         'type' => 'color',
         'title' => __('cover_info_bar_background_color','csf'),
-        'desc' => __('Custom color, lighter colors are recommended','csf'),
+        'desc' => __('Customize the colors, lighter colors are recommended','csf'),
         'default' => 'rgba(255,255,255,0.8)'
       ),     
 
@@ -1375,7 +1375,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'wave_effects',
         'type' => 'switcher',
         'title' => __('cover wave effects','csf'),
-        'label' => __('Wave effect will appear at the bottom of the cover of the home page after opening, will be forced off in dark mode','csf'),
+        'label' => __('Wave effect will appear at the bottom of the cover of the home page After turning on, will be forced off in dark mode','csf'),
         'default' => false
       ),
 
@@ -1401,7 +1401,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'color',
         'title' => __('Cover dropdown arrow color','csf'),
         'dependency' => array( 'drop_down_arrow', '==', 'true' ),
-        'desc' => __('Custom color, lighter colors are recommended','csf'),
+        'desc' => __('Customize the colors, lighter colors are recommended','csf'),
         'default' => 'rgba(255,255,255,0.8)'
       ),  
 
@@ -1410,7 +1410,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'color',
         'title' => __('Cover dropdown arrow dark mode color','csf'),
         'dependency' => array( 'drop_down_arrow', '==', 'true' ),
-        'desc' => __('Custom colors, dark colors are recommended','csf'),
+        'desc' => __('Customize the colors, dark colors are recommended','csf'),
         'default' => 'rgba(51,51,51,0.8)'
       ),  
 
@@ -1521,7 +1521,7 @@ if( class_exists( 'CSF' ) ) {
         'type'  => 'upload',
         'title' => __(' Wechat ','csf'),
         'dependency' => array( 'social_ area', '==', 'true' ),
-        'desc' => __('The best ratio is 1:1','csf'),
+        'desc' => __('The best length-width ratio of is 1:1','csf'),
         'library'      => 'image',
       ),
 
@@ -1666,7 +1666,7 @@ if( class_exists( 'CSF' ) ) {
         'type'  => 'upload',
         'title' => __('Customized social networking Ⅰ icon','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc' => __('The best ratio is 1:1','csf'),
+        'desc' => __('The best length-width ratio of is 1:1','csf'),
         'library'      => 'image',
       ),
 
@@ -1683,7 +1683,7 @@ if( class_exists( 'CSF' ) ) {
         'type'  => 'upload',
         'title' => __('Customized social networking Ⅱ icon','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc' => __('The best ratio is 1:1','csf'),
+        'desc' => __('The best length-width ratio of is 1:1','csf'),
         'library'      => 'image',
       ),
 
@@ -1767,7 +1767,7 @@ if( class_exists( 'CSF' ) ) {
           array( 'announce_bar', '==', 'true' ),
           array( 'announce_bar_style', '==', 'pure' ),
         ),
-        'desc' => __('Custom color, it is recommended to use a color that is the same color as the theme color and is a lighter color','csf'),
+        'desc' => __('Customize the colors, it is recommended to use a color that is the same color as the theme color and is a lighter color','csf'),
         'default' => '#E6E6E6'
       ),
 
@@ -1797,7 +1797,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'color',
         'title' => __('announcement text color','csf'),
         'dependency' => array( 'announce_bar', '==', 'true' ),
-        'desc' => __('Custom color, suggest matching appropriate color to background color','csf'),
+        'desc' => __('Customize the colors, suggest matching appropriate color to background color','csf'),
         'default' => '#999'
       ),    
 
@@ -1846,7 +1846,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'area_title_bottom_color',
         'type' => 'color',
         'title' => __('area_title_bottom_color','csf'),
-        'desc' => __('Custom color, it is recommended to use a color that is the same color as the theme color and is a lighter color','csf'),
+        'desc' => __('Customize the colors, it is recommended to use a color that is the same color as the theme color and is a lighter color','csf'),
         'default' => '#e8e8e8'
       ),  
 
@@ -1892,7 +1892,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'color',
         'title' => __('display area background color','csf'),
         'dependency' => array( 'exhibition_area_style', '==', 'left_and_right' ),
-        'desc' => __('Custom colors, lighter colors are recommended','csf'),
+        'desc' => __('Customize the colors, lighter colors are recommended','csf'),
         'default' => 'rgba(255,255,255,0.4)'
       ),
       
@@ -2089,7 +2089,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'color',
         'title' => __('Post area time alert area background color','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc' => __('Custom color, it is recommended to use a color that is the same color as the theme color and belongs to a lighter color','csf'),
+        'desc' => __('Customize the colors, it is recommended to use a color that is the same color as the theme color and belongs to a lighter color','csf'),
         'default' => '#fff5e0'
       ),    
 
@@ -2098,7 +2098,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'color',
         'title' => __('Post area time alert area text color','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc' => __('Custom color, suggest using the same color as the theme color matching color','csf'),
+        'desc' => __('Customize the colors, suggest using the same color as the theme color matching color','csf'),
         'default' => '#ffcc00'
       ),    
 
@@ -2134,7 +2134,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'color',
         'title' => __('Post area icon color','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc' => __('Custom color, suggest using the same color as the theme color matching color','csf'),
+        'desc' => __('Customize the colors, suggest using the same color as the theme color matching color','csf'),
         'default' => '#ffcc00'
       ),    
 
@@ -2143,7 +2143,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'color',
         'title' => __('Post area border shadow color','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc' => __('Custom color, it is recommended to use a color that is the same color as the theme color and is a lighter color','csf'),
+        'desc' => __('Customize the colors, it is recommended to use a color that is the same color as the theme color and is a lighter color','csf'),
         'default' => '#e8e8e8'
       ),    
 
@@ -2354,7 +2354,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'shuoshuo_background_color1',
         'type' => 'color',
         'title' => __('say template say background colorⅠ','csf'),
-        'desc' => __('Custom colors','csf'),
+        'desc' => __('Customize the colors','csf'),
         'default' => '#ffe066'
       ),    
 
@@ -2362,7 +2362,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'shuoshuo_background_color2',
         'type' => 'color',
         'title' => __('talk about template talk about background color II','csf'),
-        'desc' => __('Custom colors','csf'),
+        'desc' => __('Customize the colors','csf'),
         'default' => '#ffcc00'
       ),    
 
@@ -2483,7 +2483,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'not_robot',
         'type' => 'switcher',
         'title' => __('Page comment area bot verification','csf'),
-        'label' => __('After opening user comments need to be verified before posting','csf'),
+        'label' => __('After turning on user comments need to be verified before posting','csf'),
         'default' => false
       ),
 
@@ -2645,7 +2645,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'login_urlskip',
         'type' => 'switcher',
         'title' => __('Jump after login','csf'),
-        'label' => __('Jump to backend for admins and home for users after opening','csf'),
+        'label' => __('Jump to backend for admins and home for users After turning on','csf'),
         'default' => false
       ),
 
@@ -2667,7 +2667,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'admin_first_class_color',
         'type' => 'color',
         'title' => __('Dashboard first class menu color','csf'),
-        'desc' => __('Custom colors','csf'),
+        'desc' => __('Customize the colors','csf'),
         'default' => '#88cfef'
       ),  
 
@@ -2675,7 +2675,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'admin_second_class_color',
         'type' => 'color',
         'title' => __('Dashboard secondary menu color','csf'),
-        'desc' => __('Custom colors','csf'),
+        'desc' => __('Customize the colors','csf'),
         'default' => '#67c4ef'
       ),  
 
@@ -2683,7 +2683,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'admin_emphasize_color',
         'type' => 'color',
         'title' => __('dashboard emphasis color','csf'),
-        'desc' => __('Custom colors','csf'),
+        'desc' => __('Customize the colors','csf'),
         'default' => '#342a29'
       ),  
 
@@ -2691,7 +2691,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'admin_button_color',
         'type' => 'color',
         'title' => __('Dashboard button color','csf'),
-        'desc' => __('Custom colors','csf'),
+        'desc' => __('Customize the colors','csf'),
         'default' => '#d1976d'
       ),  
 
@@ -2699,7 +2699,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'admin_text_color',
         'type' => 'color',
         'title' => __('dashboard text color','csf'),
-        'desc' => __('Custom colors','csf'),
+        'desc' => __('Customize the colors','csf'),
       ),  
 
     )
@@ -2798,7 +2798,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'fancybox',
         'type' => 'switcher',
         'title' => __('FancyBox lightbox effect','csf'),
-        'label' => __('FancyBox will be used as an image lightbox effect after opening, additional JQ libraries will be loaded','csf'),
+        'label' => __('FancyBox will be used as an image lightbox effect After turning on, additional JQ libraries will be loaded','csf'),
         'dependency' => array( 'baguetteBox', '==', 'false' ),
         'default' => false
       ), 
