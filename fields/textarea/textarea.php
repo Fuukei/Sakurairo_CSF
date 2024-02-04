@@ -28,7 +28,7 @@ if ( ! class_exists( 'CSF_Field_textarea' ) ) {
       if ( ! empty( $this->field['shortcoder'] ) ) {
 
         $shortcodes = ( is_array( $this->field['shortcoder'] ) ) ? $this->field['shortcoder'] : array_filter( (array) $this->field['shortcoder'] );
-        $instances  = ( ! empty( CSF::$shortcode_instances ) ) ? CSF::$shortcode_instances : array();
+        $instances  = ( ! empty( Sakurairo_CSF::$shortcode_instances ) ) ? Sakurairo_CSF::$shortcode_instances : array();
 
         if ( ! empty( $shortcodes ) && ! empty( $instances ) ) {
 

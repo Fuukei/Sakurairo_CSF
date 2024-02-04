@@ -33,8 +33,8 @@ if ( ! class_exists( 'CSF_Field_datetime' ) ) {
       if ( ! empty( $this->field['from_to'] ) ) {
 
         $args = wp_parse_args( $this->field, array(
-          'text_from' => esc_html__( 'From', 'csf' ),
-          'text_to'   => esc_html__( 'To', 'csf' ),
+          'text_from' => esc_html__( 'From', 'sakurairo_csf' ),
+          'text_to'   => esc_html__( 'To', 'sakurairo_csf' ),
         ) );
 
         $value = wp_parse_args( $this->value, array(

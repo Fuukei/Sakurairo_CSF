@@ -23,7 +23,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
     public $args         = array(
 
       // framework title
-      'framework_title'         => 'Codestar Framework <small>by Codestar</small>',
+      'framework_title'         => '<img src="https://s.nmxc.ltd/sakurairo_vision/@2.6/series/login_logo.webp" style="width:50px;height:50px;transform:translateY(32%);margin-right: 13px;">iro 主题设置 <small> / Theme Options / テーマの設定</small>',
       'framework_class'         => '',
 
       // menu settings
@@ -59,7 +59,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
       'admin_bar_menu_priority' => 50,
 
       // footer
-      'footer_text'             => 'Thank you for creating with Codestar Framework',
+      'footer_text'             => 'Sakurairo 使用 Fuukei 定制的 <a href="https://github.com/Fuukei/Sakurairo_CSF" target="_blank">CSF</a> 设置框架，感谢你的使用 0v0',
       'footer_after'            => '',
       'footer_credit'           => '',
 
@@ -80,7 +80,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
 
       // theme
       'nav'                     => 'normal',
-      'theme'                   => 'dark',
+      'theme'                   => 'light',
       'class'                   => '',
 
       // external default values
@@ -166,7 +166,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
       $result = $this->set_options( true );
 
       if ( ! $result ) {
-        wp_send_json_error( array( 'error' => esc_html__( 'Error while saving the changes.', 'csf' ) ) );
+        wp_send_json_error( array( 'error' => esc_html__( 'Error while saving the changes.', 'sakurairo_csf' ) ) );
       } else {
         wp_send_json_success( array( 'notice' => $this->notice, 'errors' => $this->errors ) );
       }
@@ -226,7 +226,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
           $import_data  = json_decode( wp_unslash( trim( $response[ 'csf_import_data' ] ) ), true );
           $options      = ( is_array( $import_data ) && ! empty( $import_data ) ) ? $import_data : array();
           $importing    = true;
-          $this->notice = esc_html__( 'Settings successfully imported.', 'csf' );
+          $this->notice = esc_html__( 'Settings successfully imported.', 'sakurairo_csf' );
 
         }
 
@@ -238,7 +238,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
             }
           }
 
-          $this->notice = esc_html__( 'Default settings restored.', 'csf' );
+          $this->notice = esc_html__( 'Default settings restored.', 'sakurairo_csf' );
 
         } else if ( ! empty( $transient['reset_section'] ) && ! empty( $section_id ) ) {
 
@@ -254,7 +254,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
 
           $data = wp_parse_args( $data, $this->options );
 
-          $this->notice = esc_html__( 'Default settings restored.', 'csf' );
+          $this->notice = esc_html__( 'Default settings restored.', 'sakurairo_csf' );
 
         } else {
 
@@ -325,7 +325,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
         do_action( "csf_{$this->unique}_save_after", $data, $this );
 
         if ( empty( $this->notice ) ) {
-          $this->notice = esc_html__( 'Settings saved.', 'csf' );
+          $this->notice = esc_html__( 'Settings saved.', 'sakurairo_csf' );
         }
 
         return true;
@@ -506,16 +506,16 @@ if ( ! class_exists( 'CSF_Options' ) ) {
 
             echo '<div class="csf-form-result csf-form-success '. esc_attr( $notice_class ) .'">'. $notice_text .'</div>';
 
-            echo ( $this->args['show_form_warning'] ) ? '<div class="csf-form-result csf-form-warning">'. esc_html__( 'You have unsaved changes, save your changes!', 'csf' ) .'</div>' : '';
+            echo ( $this->args['show_form_warning'] ) ? '<div class="csf-form-result csf-form-warning">'. esc_html__( 'You have unsaved changes, save your changes!', 'sakurairo_csf' ) .'</div>' : '';
 
-            echo ( $has_nav && $this->args['show_all_options'] ) ? '<div class="csf-expand-all" title="'. esc_html__( 'show all settings', 'csf' ) .'"><i class="fas fa-outdent"></i></div>' : '';
+            echo ( $has_nav && $this->args['show_all_options'] ) ? '<div class="csf-expand-all" title="'. esc_html__( 'show all settings', 'sakurairo_csf' ) .'"><i class="fas fa-outdent"></i></div>' : '';
 
-            echo ( $this->args['show_search'] ) ? '<div class="csf-search"><input type="text" name="csf-search" placeholder="'. esc_html__( 'Search...', 'csf' ) .'" autocomplete="off" /></div>' : '';
+            echo ( $this->args['show_search'] ) ? '<div class="csf-search"><input type="text" name="csf-search" placeholder="'. esc_html__( 'Search...', 'sakurairo_csf' ) .'" autocomplete="off" /></div>' : '';
 
             echo '<div class="csf-buttons">';
-            echo '<input type="submit" name="'. esc_attr( $this->unique ) .'[_nonce][save]" class="button button-primary csf-top-save csf-save'. esc_attr( $ajax_class ) .'" value="'. esc_html__( 'Save', 'csf' ) .'" data-save="'. esc_html__( 'Saving...', 'csf' ) .'">';
-            echo ( $this->args['show_reset_section'] ) ? '<input type="submit" name="csf_transient[reset_section]" class="button button-secondary csf-reset-section csf-confirm" value="'. esc_html__( 'Reset Section', 'csf' ) .'" data-confirm="'. esc_html__( 'Are you sure to reset this section options?', 'csf' ) .'">' : '';
-            echo ( $this->args['show_reset_all'] ) ? '<input type="submit" name="csf_transient[reset]" class="button csf-warning-primary csf-reset-all csf-confirm" value="'. ( ( $this->args['show_reset_section'] ) ? esc_html__( 'Reset All', 'csf' ) : esc_html__( 'Reset', 'csf' ) ) .'" data-confirm="'. esc_html__( 'Are you sure you want to reset all settings to default values?', 'csf' ) .'">' : '';
+            echo '<input type="submit" name="'. esc_attr( $this->unique ) .'[_nonce][save]" class="button button-primary csf-top-save csf-save'. esc_attr( $ajax_class ) .'" value="'. esc_html__( 'Save', 'sakurairo_csf' ) .'" data-save="'. esc_html__( 'Saving...', 'sakurairo_csf' ) .'">';
+            echo ( $this->args['show_reset_section'] ) ? '<input type="submit" name="csf_transient[reset_section]" class="button button-secondary csf-reset-section csf-confirm" value="'. esc_html__( 'Reset Section', 'sakurairo_csf' ) .'" data-confirm="'. esc_html__( 'Are you sure to reset this section options?', 'sakurairo_csf' ) .'">' : '';
+            echo ( $this->args['show_reset_all'] ) ? '<input type="submit" name="csf_transient[reset]" class="button csf-warning-primary csf-reset-all csf-confirm" value="'. ( ( $this->args['show_reset_section'] ) ? esc_html__( 'Reset All', 'sakurairo_csf' ) : esc_html__( 'Reset', 'sakurairo_csf' ) ) .'" data-confirm="'. esc_html__( 'Are you sure you want to reset all settings to default values?', 'sakurairo_csf' ) .'">' : '';
             echo '</div>';
 
           echo '</div>';
@@ -607,13 +607,13 @@ if ( ! class_exists( 'CSF_Options' ) ) {
 
                   $value = ( ! empty( $field['id'] ) && isset( $this->options[$field['id']] ) ) ? $this->options[$field['id']] : '';
 
-                  CSF::field( $field, $value, $this->unique, 'options' );
+                  Sakurairo_CSF::field( $field, $value, $this->unique, 'options' );
 
                 }
 
               } else {
 
-                echo '<div class="csf-no-option">'. esc_html__( 'No data available.', 'csf' ) .'</div>';
+                echo '<div class="csf-no-option">'. esc_html__( 'No data available.', 'sakurairo_csf' ) .'</div>';
 
               }
 
@@ -636,9 +636,9 @@ if ( ! class_exists( 'CSF_Options' ) ) {
           echo '<div class="csf-footer">';
 
           echo '<div class="csf-buttons">';
-          echo '<input type="submit" name="csf_transient[save]" class="button button-primary csf-save'. esc_attr( $ajax_class ) .'" value="'. esc_html__( 'Save', 'csf' ) .'" data-save="'. esc_html__( 'Saving...', 'csf' ) .'">';
-          echo ( $this->args['show_reset_section'] ) ? '<input type="submit" name="csf_transient[reset_section]" class="button button-secondary csf-reset-section csf-confirm" value="'. esc_html__( 'Reset Section', 'csf' ) .'" data-confirm="'. esc_html__( 'Are you sure to reset this section options?', 'csf' ) .'">' : '';
-          echo ( $this->args['show_reset_all'] ) ? '<input type="submit" name="csf_transient[reset]" class="button csf-warning-primary csf-reset-all csf-confirm" value="'. ( ( $this->args['show_reset_section'] ) ? esc_html__( 'Reset All', 'csf' ) : esc_html__( 'Reset', 'csf' ) ) .'" data-confirm="'. esc_html__( 'Are you sure you want to reset all settings to default values?', 'csf' ) .'">' : '';
+          echo '<input type="submit" name="csf_transient[save]" class="button button-primary csf-save'. esc_attr( $ajax_class ) .'" value="'. esc_html__( 'Save', 'sakurairo_csf' ) .'" data-save="'. esc_html__( 'Saving...', 'sakurairo_csf' ) .'">';
+          echo ( $this->args['show_reset_section'] ) ? '<input type="submit" name="csf_transient[reset_section]" class="button button-secondary csf-reset-section csf-confirm" value="'. esc_html__( 'Reset Section', 'sakurairo_csf' ) .'" data-confirm="'. esc_html__( 'Are you sure to reset this section options?', 'sakurairo_csf' ) .'">' : '';
+          echo ( $this->args['show_reset_all'] ) ? '<input type="submit" name="csf_transient[reset]" class="button csf-warning-primary csf-reset-all csf-confirm" value="'. ( ( $this->args['show_reset_section'] ) ? esc_html__( 'Reset All', 'sakurairo_csf' ) : esc_html__( 'Reset', 'sakurairo_csf' ) ) .'" data-confirm="'. esc_html__( 'Are you sure you want to reset all settings to default values?', 'sakurairo_csf' ) .'">' : '';
           echo '</div>';
 
           echo ( ! empty( $this->args['footer_text'] ) ) ? '<div class="csf-copyright">'. $this->args['footer_text'] .'</div>' : '';
